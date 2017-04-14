@@ -12,3 +12,10 @@
 */
 
 Route::get('/', 'HomeController@index')->middleware("guest");
+
+Route::get('/{package?}/programm/{date?}', 'HomeController@test')->middleware("guest");
+Route::get('/programm/{date?}', 'HomeController@test')->middleware("guest");
+
+
+
+
