@@ -10,12 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'HomeController@index');
+Route::get('/welcome', 'HomeController@welcome');
 
-Route::get('/', 'HomeController@index')->middleware("guest");
+Route::get('/{package}/programm/{date?}', 'HomeController@test');
+Route::get('/programm/{date?}', 'HomeController@test2');
 
-Route::get('/{package?}/programm/{date?}', 'HomeController@test')->middleware("guest");
-Route::get('/programm/{date?}', 'HomeController@test')->middleware("guest");
+Auth::routes();
 
+Route::get('/home', 'HomeController@index');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index');
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

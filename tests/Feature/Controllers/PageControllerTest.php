@@ -7,17 +7,15 @@ use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 
-class ExampleTest extends TestCase
+class PageControllerTest extends TestCase
 {
     /**
-     * A basic test example.
-     *
-     * @return void
+     * @test
      */
-    public function testBasicTest()
+    public function it_shows_program_page_of_all_packages()
     {
-        $response = $this->get('/');
+        $response = $this->get('/programm');
 
-        $response->assertStatus(302);
+        $response->assertStatus(200);
     }
 }
